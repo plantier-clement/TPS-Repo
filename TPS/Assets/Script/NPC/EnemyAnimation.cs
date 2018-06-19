@@ -26,7 +26,9 @@ public class EnemyAnimation : MonoBehaviour {
 		lastPosition = transform.position;
 
 		animator.SetFloat ("Vertical", velocity / pathfinder.Agent.speed);
-		animator.SetBool ("IsWalking", enemyPlayer.EnemyState.CurrentMode == EnemyState.EMode.AWARE);
+		animator.SetBool ("IsWalking", enemyPlayer.EnemyState.CurrentMode == EnemyState.EMode.UNAWARE);
+		animator.SetBool ("IsAiming", enemyPlayer.EnemyState.CurrentMode == EnemyState.EMode.AWARE);
+		animator.SetBool ("IsCrouching", enemyPlayer.EnemyState.CurrentMoveState == EnemyState.EMoveState.CROUCHING);
 	}
 
 }

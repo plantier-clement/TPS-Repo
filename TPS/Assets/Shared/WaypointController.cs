@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if (UNITY_EDITOR)
 using UnityEditor;
+#endif
 
 
 public class WaypointController : MonoBehaviour {
@@ -51,7 +53,9 @@ public class WaypointController : MonoBehaviour {
 			Vector3 waypointPosition = waypoint.transform.position;
 			Gizmos.DrawSphere (waypointPosition, 0.2f);
 
+			#if (UNITY_EDITOR)
 			HandleNames (waypoint);
+			#endif
 
 			if (previousWaypoint != Vector3.zero) {
 				Gizmos.DrawLine (previousWaypoint, waypointPosition);
@@ -60,6 +64,9 @@ public class WaypointController : MonoBehaviour {
 		}
 
 	}
+
+
+	#if (UNITY_EDITOR)
 
 	void HandleNames(Waypoint waypoint) {
 
@@ -70,5 +77,6 @@ public class WaypointController : MonoBehaviour {
 		}
 	}
 
+	#endif
 
 }

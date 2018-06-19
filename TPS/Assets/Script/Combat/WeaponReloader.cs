@@ -11,7 +11,8 @@ public class WeaponReloader : MonoBehaviour {
 	[SerializeField] Container inventory;
 	[SerializeField] EWeaponType weaponType;
 
-	 public int shotsFiredInClip;
+
+	[HideInInspector] public int shotsFiredInClip;
 
 	bool isReloading;
 	System.Guid containerItemId;
@@ -20,6 +21,7 @@ public class WeaponReloader : MonoBehaviour {
 	public event System.Action<Shooter> OnReloadStart;
 	public event System.Action OnReloadEnd;
 	public event System.Action OnAmmoChanged;
+
 
 	void Awake(){
 		inventory.OnContainerReady += () => {  
@@ -31,8 +33,6 @@ public class WeaponReloader : MonoBehaviour {
 	public void Reload(){
 		if (isReloading)
 			return;
-
-
 
 		isReloading = true;
 		GameManager.Instance.Timer.Add (() => {

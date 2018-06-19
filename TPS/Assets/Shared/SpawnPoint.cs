@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if (UNITY_EDITOR)
 using UnityEditor;
+#endif
 
 public class SpawnPoint : MonoBehaviour {
 
@@ -14,8 +16,13 @@ public class SpawnPoint : MonoBehaviour {
 		Gizmos.color = Color.red;
 		Gizmos.DrawLine (Vector3.zero + Vector3.up * 1, Vector3.zero + new Vector3 (0,1,1) * 1);
 
+		#if (UNITY_EDITOR)	
 		HandleNames ();
+		#endif
 	}
+
+
+	#if (UNITY_EDITOR)	
 
 	void HandleNames() {
 
@@ -25,4 +32,5 @@ public class SpawnPoint : MonoBehaviour {
 			Handles.Label (transform.position + Vector3.up * 0.5f, CustomName);
 		}
 	}
+	#endif
 }

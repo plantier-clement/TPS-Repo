@@ -6,6 +6,7 @@ public class PlayerAnimation : MonoBehaviour {
 
 
 	Animator animator;
+
 	private PlayerAim m_PlayerAim;
 	private PlayerAim PlayerAim {
 		get {
@@ -15,13 +16,18 @@ public class PlayerAnimation : MonoBehaviour {
 		}
 	}
 
+
 	void Awake () {
 		animator = GetComponentInChildren <Animator> ();
 
 	}
-	
-	void Update () {
 
+
+	void Update () {
+		/*
+		if (GameManager.Instance.IsGamePaused)
+			return;
+		*/
 		animator.SetFloat ("Vertical", GameManager.Instance.InputController.Vertical);
 		animator.SetFloat ("Horizontal", GameManager.Instance.InputController.Horizontal);
 
@@ -33,6 +39,11 @@ public class PlayerAnimation : MonoBehaviour {
 		animator.SetFloat ("AimAngle", PlayerAim.GetAngle ());
 		animator.SetBool ("IsAiming", GameManager.Instance.LocalPlayer.PlayerState.WeaponState == PlayerState.EWeaponState.AIMING ||
 									GameManager.Instance.LocalPlayer.PlayerState.WeaponState == PlayerState.EWeaponState.AIMEDFIRING);
-		
+
+		animator.SetBool ("IsInCover", GameManager.Instance.LocalPlayer.PlayerState.MoveState == PlayerState.EMoveState.COVER);
+
 	}
+
+
+
 }

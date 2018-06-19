@@ -5,11 +5,15 @@ using UnityEngine;
 public class PlayerState : MonoBehaviour {
 
 
+	bool isInCover = false;
+
+
 	public enum EMoveState{
 		WALKING,
 		RUNNING,
 		CROUCHING,
-		SPRINTING
+		SPRINTING,
+		COVER
 	}
 
 	public enum EWeaponState {
@@ -19,12 +23,15 @@ public class PlayerState : MonoBehaviour {
 		AIMEDFIRING
 	}
 
+
+
+
 	public EMoveState MoveState;
 	public EWeaponState WeaponState;
 
 
 	private InputController m_InputController;
-	public InputController InputController {
+	private InputController InputController {
 		get {
 			if (m_InputController == null)
 				m_InputController = GameManager.Instance.InputController;
@@ -33,11 +40,18 @@ public class PlayerState : MonoBehaviour {
 	}
 
 
+	void Awake(){
+	
+		GameManager.Instance.EventBus.AddListener ("CoverToggle", ToggleCover);
+	}
+
+
 	void Update (){
 		SetMoveState ();
 		SetWeaponState ();
 
 	}
+
 
 	void SetMoveState() {
 		MoveState = EMoveState.RUNNING;
@@ -50,7 +64,11 @@ public class PlayerState : MonoBehaviour {
 
 		if (InputController.IsCrouched)
 			MoveState = EMoveState.CROUCHING;
+
+		if (isInCover)
+			MoveState = EMoveState.COVER;
 	}
+
 
 	void SetWeaponState(){
 		WeaponState = EWeaponState.IDLE;
@@ -64,5 +82,14 @@ public class PlayerState : MonoBehaviour {
 		if (InputController.IsAiming && InputController.Fire1)
 			WeaponState = EWeaponState.AIMEDFIRING;
 	}
+
+
+	void ToggleCover(){
+		isInCover = !isInCover;
+
+	}
+
+
+
 
 }

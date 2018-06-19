@@ -11,6 +11,12 @@ public class EnemyState : MonoBehaviour {
 		
 	}
 
+	public enum EMoveState {
+		STANDING,
+		CROUCHING,
+
+	}
+
 	private EMode m_CurrentMode;
 	public EMode CurrentMode{
 		get {
@@ -26,11 +32,28 @@ public class EnemyState : MonoBehaviour {
 		}
 	}
 
+	private EMoveState m_CurrentMoveState;
+	public EMoveState CurrentMoveState{
+		get {
+			return m_CurrentMoveState;
+		}
+		set {
+			if (m_CurrentMoveState == value)
+				return;
+
+			m_CurrentMoveState = value;
+			if (OnMoveStateChanged != null)
+				OnMoveStateChanged (value);
+		}
+	}
+
 	public event System.Action<EMode> OnModeChanged;
+	public event System.Action<EMoveState> OnMoveStateChanged;
 
 
 	void Start () {
 		CurrentMode = EMode.UNAWARE;
+		CurrentMoveState = EMoveState.STANDING;
 	}
 
 	[ContextMenu("set aware")]

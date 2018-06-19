@@ -8,7 +8,7 @@ using UnityEngine;
 public class EnemyPlayer : MonoBehaviour {
 
 	[SerializeField] SwatSoldier enemySettings;
-	[SerializeField] Scanner playerScanner;
+	[SerializeField] public Scanner playerScanner;
 
 	Pathfinder pathfinder;
 
@@ -34,6 +34,25 @@ public class EnemyPlayer : MonoBehaviour {
 		}
 	}
 
+	EnemyAnimation m_EnemyAnimation;
+	public EnemyAnimation EnemyAnimation {
+		get {
+			if (m_EnemyAnimation == null)
+				m_EnemyAnimation = GetComponent <EnemyAnimation> ();
+			return m_EnemyAnimation;
+		}
+	}
+
+	EnemyShoot m_EnemyShoot;
+	public EnemyShoot EnemyShoot {
+		get {
+			if (m_EnemyShoot == null)
+				m_EnemyShoot = GetComponent <EnemyShoot> ();
+			return m_EnemyShoot;
+		}
+	}
+
+
 	public event System.Action <Player> OnTargetSelected;
 
 
@@ -54,6 +73,10 @@ public class EnemyPlayer : MonoBehaviour {
 
 
 	void Update(){
+		
+		if (EnemyHealth.IsAlive)
+			return;
+		
 		if (priorityTarget == null)
 			return;
 
@@ -89,6 +112,7 @@ public class EnemyPlayer : MonoBehaviour {
 
 		if (priorityTarget != null) {
 			if (OnTargetSelected != null) {
+				this.EnemyState.CurrentMode = EnemyState.EMode.AWARE;
 				OnTargetSelected (priorityTarget);
 			}
 		}
@@ -96,7 +120,7 @@ public class EnemyPlayer : MonoBehaviour {
 
 
 
-	void SelectClosestTarget(){
+	void SelectClosestTarget() {
 		float closestTarget = playerScanner.ScanRange;
 
 		foreach (var possibleTarget in myTargets) {
@@ -104,5 +128,39 @@ public class EnemyPlayer : MonoBehaviour {
 				priorityTarget = possibleTarget;
 		}
 	}
+
+
+	internal void ClearTargetAndScan (){
+		priorityTarget = null;
+
+		GameManager.Instance.Timer.Add (CheckCrouch, 3);
+		GameManager.Instance.Timer.Add (CheckStopAiming, 5);
+		GameManager.Instance.Timer.Add (CheckContinuePatrol, 7);
+
+		Scanner_OnScanReady ();
+	}
+
+
+	void CheckStopAiming (){
+		if(priorityTarget != null)
+			return;
+
+		this.EnemyState.CurrentMode = EnemyState.EMode.UNAWARE;
+	}
+
+
+	void CheckContinuePatrol (){
+		if (priorityTarget != null)
+			return;
+		pathfinder.Agent.isStopped = false;
+	}
+
+	void CheckCrouch (){
+		if(priorityTarget != null)
+			return;
+
+		this.EnemyState.CurrentMoveState = EnemyState.EMoveState.STANDING;
+	}
+
 
 }

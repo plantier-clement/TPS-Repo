@@ -11,7 +11,6 @@ public class Player : MonoBehaviour {
 	[SerializeField] AudioController footsteps;
 	[SerializeField] float minMoveThreshold;
 
-	float test;
 
 	[System.Serializable]
 	public class MouseInput {
@@ -120,6 +119,9 @@ public class Player : MonoBehaviour {
 		
 		if (playerInput.IsCrouched)
 			moveSpeed = playerSettings.CrouchSpeed;
+
+		if (PlayerState.MoveState == PlayerState.EMoveState.COVER)
+			moveSpeed = playerSettings.WalkSpeed;
 
 		// find a way to handle multiple inputs?
 	

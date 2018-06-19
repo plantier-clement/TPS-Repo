@@ -16,4 +16,8 @@ public class AmmoPickup : PickupItem {
 
 		playerTransform.GetComponent <Player>().PlayerShoot.ActiveWeapon.Reloader.HandleOnAmmoChanged ();
 	}
+
+
+
+
 }
