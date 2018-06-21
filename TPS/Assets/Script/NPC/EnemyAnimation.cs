@@ -7,7 +7,7 @@ using UnityEngine;
 public class EnemyAnimation : MonoBehaviour {
 
 
-	[SerializeField] Animator animator;
+	Animator animator;
 
 	Vector3 lastPosition;
 	Pathfinder pathfinder;
@@ -15,6 +15,8 @@ public class EnemyAnimation : MonoBehaviour {
 
 
 	void Awake () {
+		animator = GetComponentInChildren <Animator> ();
+
 		pathfinder = GetComponent <Pathfinder> ();
 		enemyPlayer = GetComponent <EnemyPlayer> ();
 
@@ -29,6 +31,7 @@ public class EnemyAnimation : MonoBehaviour {
 		animator.SetBool ("IsWalking", enemyPlayer.EnemyState.CurrentMode == EnemyState.EMode.UNAWARE);
 		animator.SetBool ("IsAiming", enemyPlayer.EnemyState.CurrentMode == EnemyState.EMode.AWARE);
 		animator.SetBool ("IsCrouching", enemyPlayer.EnemyState.CurrentMoveState == EnemyState.EMoveState.CROUCHING);
+		animator.SetBool ("IsReloading", enemyPlayer.EnemyShoot.ActiveWeapon.Reloader.IsReloading);
 	}
 
 }

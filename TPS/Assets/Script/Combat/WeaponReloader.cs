@@ -18,7 +18,7 @@ public class WeaponReloader : MonoBehaviour {
 	System.Guid containerItemId;
 
 
-	public event System.Action<Shooter> OnReloadStart;
+	public event System.Action OnReloadStart;
 	public event System.Action OnReloadEnd;
 	public event System.Action OnAmmoChanged;
 
@@ -35,6 +35,8 @@ public class WeaponReloader : MonoBehaviour {
 			return;
 
 		isReloading = true;
+		HandleOnReloadStart ();
+
 		GameManager.Instance.Timer.Add (() => {
 			ExecuteReload(inventory.TakeFromContainer (containerItemId, clipSize - RoundsRemainingInClip));
 		}, reloadTimeDefault);
@@ -46,6 +48,7 @@ public class WeaponReloader : MonoBehaviour {
 		isReloading = false;
 
 		HandleOnAmmoChanged ();
+		HandleOnReloadEnd ();
 	}
 
 
@@ -59,6 +62,20 @@ public class WeaponReloader : MonoBehaviour {
 	public void HandleOnAmmoChanged (){
 		if (OnAmmoChanged != null)
 			OnAmmoChanged ();
+	}
+
+
+	void HandleOnReloadStart (){
+		if (OnReloadStart != null) {
+			OnReloadStart ();
+		}
+	}
+
+
+	void HandleOnReloadEnd (){
+		if (OnReloadEnd != null) {
+			OnReloadEnd ();
+		}
 	}
 
 

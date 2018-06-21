@@ -11,14 +11,7 @@ public class EscapeMenu : MonoBehaviour {
 	[SerializeField] Button YesButton;
 	[SerializeField] Button NoButton;
 
-	private PlayerState m_PlayerState;
-	private PlayerState PlayerState{
-		get {
-			if (m_PlayerState == null)
-				m_PlayerState = GameManager.Instance.LocalPlayer.PlayerState;
-			return m_PlayerState;
-		}
-	}
+
 
 
 	void Awake(){
@@ -59,7 +52,7 @@ public class EscapeMenu : MonoBehaviour {
 		
 		Time.timeScale = 0;
 		EscapeMenuPanel.SetActive (true);
-
+		GameManager.Instance.InputController.SetInputMode (InputController.EInputMode.MENU);
 		Cursor.visible = true;
 		GameManager.Instance.IsGamePaused = true;
 
@@ -69,7 +62,7 @@ public class EscapeMenu : MonoBehaviour {
 	void ResumeGame(){
 		Time.timeScale = 1;
 		EscapeMenuPanel.SetActive (false);
-
+		GameManager.Instance.InputController.SetInputMode (InputController.EInputMode.CHARACTER);
 		Cursor.visible = false;
 		GameManager.Instance.IsGamePaused = false;
 

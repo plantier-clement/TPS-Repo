@@ -8,8 +8,7 @@ public class AmmoPickup : PickupItem {
 	[SerializeField] float respawnTime;
 	[SerializeField] int amount;
 
-	public override void OnPickup (Transform playerTransform)
-	{
+	public override void OnPickup (Transform playerTransform)	{
 		var playerInventory = playerTransform.GetComponentInChildren <Container>();
 		GameManager.Instance.Respawner.Despawn (gameObject, respawnTime);
 		playerInventory.Put (weaponType.ToString (), amount);

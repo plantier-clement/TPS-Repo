@@ -24,8 +24,6 @@ public class PlayerState : MonoBehaviour {
 	}
 
 
-
-
 	public EMoveState MoveState;
 	public EWeaponState WeaponState;
 
@@ -42,7 +40,7 @@ public class PlayerState : MonoBehaviour {
 
 	void Awake(){
 	
-		GameManager.Instance.EventBus.AddListener ("CoverToggle", ToggleCover);
+		GameManager.Instance.EventBus.AddListener ("CoverToggle", CoverToggle);
 	}
 
 
@@ -84,12 +82,11 @@ public class PlayerState : MonoBehaviour {
 	}
 
 
-	void ToggleCover(){
+	void CoverToggle(){
 		isInCover = !isInCover;
+		print ("PState isincover" + isInCover);
 
 	}
-
-
 
 
 }

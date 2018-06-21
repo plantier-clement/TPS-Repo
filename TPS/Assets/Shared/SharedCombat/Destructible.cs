@@ -14,7 +14,6 @@ public class Destructible : MonoBehaviour {
 	float damageTaken;
 
 
-
 	public float HitPointsRemaining {
 		get { 
 			return hitPoints - damageTaken;
@@ -45,7 +44,7 @@ public class Destructible : MonoBehaviour {
 	}
 
 
-	public void Reset (){
+	public void ResetHP (){
 		damageTaken = 0;
 	}
 }

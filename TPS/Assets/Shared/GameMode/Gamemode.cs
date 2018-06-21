@@ -32,6 +32,7 @@ public abstract class Gamemode : MonoBehaviour {
 
 	protected virtual void TriggerEndGame(bool value){
 
+		GameManager.Instance.InputController.SetInputMode (InputController.EInputMode.MENU);
 		TriggerVictoryDefeat (value);
 	}
 

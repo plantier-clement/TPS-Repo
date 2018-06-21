@@ -5,6 +5,12 @@ using UnityEngine;
 public class InputController : MonoBehaviour {
 
 
+	public enum EInputMode{
+		MENU,
+		CHARACTER
+	}
+
+	public EInputMode InputMode = EInputMode.CHARACTER;
 
 
 
@@ -37,8 +43,7 @@ public class InputController : MonoBehaviour {
 
 	void Update(){
 
-
-
+		if (InputMode == EInputMode.CHARACTER) {
 
 			Vertical = Input.GetAxis ("Vertical");
 			Horizontal = Input.GetAxis ("Horizontal");
@@ -56,13 +61,20 @@ public class InputController : MonoBehaviour {
 			IsAiming = Input.GetButton ("Aim");
 			Cover = Input.GetButtonDown ("Cover");
 			Escape = Input.GetButtonDown ("Cancel");
-
+		}
 
 
 		// Menu & shit
-
+		if (InputMode == EInputMode.MENU) {
 			Escape = Input.GetButtonDown ("Cancel");
-
+		}
 
 	}
+
+
+	public void SetInputMode (EInputMode newMode) {
+	
+		InputMode = newMode;
+	}
+
 }

@@ -19,7 +19,8 @@ public class PlayerShoot : WeaponController {
 		if (!isPlayerAlive)
 			return;
 
-		if (GameManager.Instance.LocalPlayer.PlayerState.MoveState == PlayerState.EMoveState.SPRINTING) {
+		if (GameManager.Instance.LocalPlayer.PlayerState.MoveState == PlayerState.EMoveState.SPRINTING ||
+			GameManager.Instance.LocalPlayer.PlayerState.MoveState == PlayerState.EMoveState.COVER) {
 			CanFire = false;
 		} else {
 			CanFire = true;

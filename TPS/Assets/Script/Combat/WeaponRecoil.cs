@@ -57,9 +57,6 @@ public class WeaponRecoil : MonoBehaviour {
 	void Update(){
 	
 
-
-
-
 		if (isRecoilActive) {
 
 			if (nextRecoilCooldown > Time.time) {

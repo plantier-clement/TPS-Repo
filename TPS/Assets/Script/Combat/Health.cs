@@ -14,7 +14,7 @@ public class Health : Destructible {
 	}
 
 	void OnEnable(){
-		Reset ();
+		ResetHP ();
 	}
 
 

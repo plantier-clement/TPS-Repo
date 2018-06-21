@@ -13,17 +13,18 @@ public class CoverTrigger : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 
-		if (IsLocalPlayer (other))
-			return;
 
-		playerCover = GameManager.Instance.LocalPlayer.GetComponent <PlayerCover>();
+		if (!IsLocalPlayer (other)) {
+			return;
+		}
+
 		playerCover.SetPlayerCoverAllowed (true);
 	}
 		
 
 	void OnTriggerExit (Collider other) {
 
-		if (IsLocalPlayer (other))
+		if (!IsLocalPlayer (other))
 			return;
 
 		playerCover.SetPlayerCoverAllowed (false);
@@ -37,6 +38,7 @@ public class CoverTrigger : MonoBehaviour {
 		if (other.GetComponent <Player> () != GameManager.Instance.LocalPlayer)
 			return false;
 
+		playerCover = GameManager.Instance.LocalPlayer.GetComponent <PlayerCover>();
 		return true;
 	}
 

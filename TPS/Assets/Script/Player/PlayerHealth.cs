@@ -8,15 +8,40 @@ public class PlayerHealth : Destructible {
 	[SerializeField] float respawnTime;
 	[SerializeField] Ragdoll ragdoll;
 
-	private PlayerState m_PlayerState;
-	private PlayerState PlayerState{
-		get {
-			if (m_PlayerState == null)
-				m_PlayerState = GameManager.Instance.LocalPlayer.PlayerState;
-			return m_PlayerState;
+
+
+
+
+
+
+	public override void Die ()	{
+		base.Die ();
+
+
+		ragdoll.EnableRagdoll (true);
+
+		GameManager.Instance.EventBus.RaiseEvent ("OnPlayerDeath");
+		GameManager.Instance.InputController.SetInputMode (InputController.EInputMode.MENU);
+
+
+		// if no spawn
+		if (spawnPoints.Length != 0) {
+			GameManager.Instance.Timer.Add (PlayerRespawn, respawnTime);
+			return;
 		}
+
+		GameManager.Instance.Timer.Add (DisplayDeathScreen, respawnTime);
+
+
 	}
 
+
+	void PlayerRespawn(){
+		ResetHP ();
+		SpawnAtNewSpawnpoint ();
+		GameManager.Instance.InputController.SetInputMode (InputController.EInputMode.CHARACTER);
+
+	}
 
 
 	void SpawnAtNewSpawnpoint() {
@@ -25,18 +50,17 @@ public class PlayerHealth : Destructible {
 		transform.rotation = spawnPoints [spawnIndex].transform.rotation;
 	}
 
-	public override void Die ()	{
-		base.Die ();
+
+	void DisplayDeathScreen(){
 
 
-		ragdoll.EnableRagdoll (true);
-		GameManager.Instance.Timer.Add (SpawnAtNewSpawnpoint, respawnTime);
-
-		GameManager.Instance.EventBus.RaiseEvent ("OnPlayerDeath");
 	}
+
 
 	[ContextMenu("Test Die!")]
 	void TestDie(){
 		Die ();
 	}
+
+
 }

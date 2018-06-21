@@ -8,8 +8,8 @@ public class PlayerCover : MonoBehaviour {
 	[SerializeField] LayerMask coverMask;
 
 	int numberOfRays = 8;
-	bool canTakeCover;
-	bool isInCover;
+	bool canTakeCover = false;
+	bool isInCover = false;
 	RaycastHit closestHit;
 
 	bool isAiming {
@@ -26,43 +26,48 @@ public class PlayerCover : MonoBehaviour {
 		if (!canTakeCover)
 			return;
 
-		if (isInCover) {
-			if (GameManager.Instance.InputController.Cover || isAiming || GameManager.Instance.InputController.Vertical < 0) {
-				ExitCover ();
+		if (isInCover && isAiming) {
+			ExecuteCoverToggle ();
+			return;
+		}
+
+		if (GameManager.Instance.InputController.Cover && isInCover) {
+			ExecuteCoverToggle ();
+				print ("exit cover");
 				return;
 			}
-		}
+
 	
-		if (GameManager.Instance.InputController.Cover && !isInCover)
-			EnterCover ();
+		if (GameManager.Instance.InputController.Cover)
+			TakeCover ();
 
 	}
 
 
-	void EnterCover(){
+	void TakeCover(){
 		FindCoverAroundPlayer ();
+
 		if (closestHit.distance == 0)
 			return;
 
-		GameManager.Instance.EventBus.RaiseEvent ("CoverToggle");
-		transform.rotation = Quaternion.LookRotation (closestHit.normal) * Quaternion.Euler (0, 180f, 0);
-		isInCover = true;
+		ExecuteCoverToggle ();
 	}
 
 
-	void ExitCover(){
+	void ExecuteCoverToggle(){
+		isInCover = !isInCover;
+		print ("PCover isincover: " + isInCover);
 		GameManager.Instance.EventBus.RaiseEvent ("CoverToggle");
-		isInCover = false;
+		transform.rotation = Quaternion.LookRotation (closestHit.normal) * Quaternion.Euler (0, 180f, 0);
 	}
 
 
 	internal void SetPlayerCoverAllowed(bool value){
 		canTakeCover = value;
 
+
 		if (!canTakeCover && isInCover) {
-			ExitCover ();
-		
-			print ("setplayer allowed & exit cover");
+			ExecuteCoverToggle ();
 		}
 	}
 

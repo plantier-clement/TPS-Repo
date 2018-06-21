@@ -32,7 +32,8 @@ public class Crosshair : MonoBehaviour {
 
 		SetVisibility (false);
 
-		if (GameManager.Instance.InputController.IsAiming) {
+
+		if (GameManager.Instance.InputController.IsAiming && !GameManager.Instance.LocalPlayer.PlayerShoot.ActiveWeapon.Reloader.IsReloading) {
 			SetVisibility (true);
 			Vector3 screenPosition = Camera.main.WorldToScreenPoint (transform.position);
 			Reticle.transform.position = Vector3.Lerp (Reticle.transform.position, screenPosition, speed * Time.deltaTime);
