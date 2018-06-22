@@ -64,6 +64,17 @@ public class Player : MonoBehaviour {
 		}
 	}
 
+
+	private PlayerAnimation m_PlayerAnimation;
+	public PlayerAnimation PlayerAnimation {
+		get {
+			if (m_PlayerAnimation == null)
+				m_PlayerAnimation = GetComponent <PlayerAnimation> ();
+			return m_PlayerAnimation;
+		}
+	}
+
+
 	void Awake () {
 		playerInput = GameManager.Instance.InputController;
 		GameManager.Instance.LocalPlayer = this;

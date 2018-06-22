@@ -13,7 +13,6 @@ public class InputController : MonoBehaviour {
 	public EInputMode InputMode = EInputMode.CHARACTER;
 
 
-
 	public float Vertical;
 	public float Horizontal;
 	public Vector2 MouseInput;
@@ -34,11 +33,6 @@ public class InputController : MonoBehaviour {
 	// Menu & shit
 	public bool Escape;
 
-
-	void Awake(){
-		
-		
-	}
 
 
 	void Update(){

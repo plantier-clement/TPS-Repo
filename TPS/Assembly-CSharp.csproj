@@ -54,7 +54,10 @@
      <Compile Include="Assets\Script\Combat\AssaultRifle.cs" />
      <Compile Include="Assets\Script\Combat\EWeaponType.cs" />
      <Compile Include="Assets\Script\Combat\Health.cs" />
+     <Compile Include="Assets\Script\Combat\ReloaderByCartridge.cs" />
+     <Compile Include="Assets\Script\Combat\ReloaderByClip.cs" />
      <Compile Include="Assets\Script\Combat\ShootingTarget.cs" />
+     <Compile Include="Assets\Script\Combat\Shotgun.cs" />
      <Compile Include="Assets\Script\Combat\WeaponRecoil.cs" />
      <Compile Include="Assets\Script\Combat\WeaponReloader.cs" />
      <Compile Include="Assets\Script\Menu\EscapeMenu.cs" />

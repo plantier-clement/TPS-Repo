@@ -5,28 +5,30 @@ using UnityEngine;
 public class WeaponReloader : MonoBehaviour {
 
 	[SerializeField] int maxAmmo;
-	[SerializeField] float reloadTimeDefault;
-	[SerializeField] float fastReloadTime;
-	[SerializeField] int clipSize;
-	[SerializeField] Container inventory;
+	[SerializeField] public float reloadTimeDefault;
+	[SerializeField] public float fastReloadTime;
+	[SerializeField] public int clipSize;
+	[SerializeField] public Container inventory;
 	[SerializeField] EWeaponType weaponType;
 
 
 	[HideInInspector] public int shotsFiredInClip;
-
-	bool isReloading;
-	System.Guid containerItemId;
-
+	[HideInInspector] public bool isReloading;
+	public System.Guid containerItemId;
 
 	public event System.Action OnReloadStart;
 	public event System.Action OnReloadEnd;
 	public event System.Action OnAmmoChanged;
 
 
+	protected Player player;
+
 	void Awake(){
 		inventory.OnContainerReady += () => {  
 			containerItemId = inventory.Add (weaponType.ToString (), maxAmmo);
 		};
+
+		player = GetComponentInParent <Player> ();
 	}
 		
 
@@ -34,21 +36,21 @@ public class WeaponReloader : MonoBehaviour {
 		if (isReloading)
 			return;
 
-		isReloading = true;
 		HandleOnReloadStart ();
 
-		GameManager.Instance.Timer.Add (() => {
-			ExecuteReload(inventory.TakeFromContainer (containerItemId, clipSize - RoundsRemainingInClip));
-		}, reloadTimeDefault);
+		StartReload ();
+
 	}
 
 
-	private void ExecuteReload(int amount){
-		shotsFiredInClip -= amount;
-		isReloading = false;
+	public virtual void StartReload (){
+		isReloading = true;
 
-		HandleOnAmmoChanged ();
-		HandleOnReloadEnd ();
+	}
+
+
+	public virtual void ExecuteReload(int amount){
+
 	}
 
 
@@ -60,19 +62,21 @@ public class WeaponReloader : MonoBehaviour {
 
 
 	public void HandleOnAmmoChanged (){
-		if (OnAmmoChanged != null)
+		if (OnAmmoChanged != null) {
 			OnAmmoChanged ();
+
+		}
 	}
 
 
-	void HandleOnReloadStart (){
+	public void HandleOnReloadStart (){
 		if (OnReloadStart != null) {
 			OnReloadStart ();
 		}
 	}
 
 
-	void HandleOnReloadEnd (){
+	public void HandleOnReloadEnd (){
 		if (OnReloadEnd != null) {
 			OnReloadEnd ();
 		}

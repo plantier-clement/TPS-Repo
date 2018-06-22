@@ -6,11 +6,12 @@ using UnityEngine;
 public class PlayerShoot : WeaponController {
 
 	bool isPlayerAlive;
-
+	Player player;
 
 	void Start(){
 		GetComponent <Player> ().PlayerHealth.OnDeath += PlayerHealth_OnDeath;
 		isPlayerAlive = true;
+		player = GameManager.Instance.LocalPlayer;
 	}
 
 	void Update () {
@@ -19,8 +20,8 @@ public class PlayerShoot : WeaponController {
 		if (!isPlayerAlive)
 			return;
 
-		if (GameManager.Instance.LocalPlayer.PlayerState.MoveState == PlayerState.EMoveState.SPRINTING ||
-			GameManager.Instance.LocalPlayer.PlayerState.MoveState == PlayerState.EMoveState.COVER) {
+		if (player.PlayerState.MoveState == PlayerState.EMoveState.SPRINTING ||
+			player.PlayerState.MoveState == PlayerState.EMoveState.COVER) {
 			CanFire = false;
 		} else {
 			CanFire = true;
@@ -35,7 +36,8 @@ public class PlayerShoot : WeaponController {
 		if (GameManager.Instance.InputController.MouseWheelDown)
 			SwitchWeapon (-1);
 
-		if (GameManager.Instance.InputController.Reload)
+		if (GameManager.Instance.InputController.Reload &&
+			player.PlayerState.MoveState != PlayerState.EMoveState.SPRINTING)
 			ActiveWeapon.Reload ();
 	}
 

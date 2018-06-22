@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerAnimation : MonoBehaviour {
 
 
@@ -35,14 +36,27 @@ public class PlayerAnimation : MonoBehaviour {
 		animator.SetBool ("IsCrouching", GameManager.Instance.InputController.IsCrouched);
 
 		animator.SetFloat ("AimAngle", PlayerAim.GetAngle ());
-		animator.SetBool ("IsAiming", GameManager.Instance.LocalPlayer.PlayerState.WeaponState == PlayerState.EWeaponState.AIMING ||
-									GameManager.Instance.LocalPlayer.PlayerState.WeaponState == PlayerState.EWeaponState.AIMEDFIRING);
+		animator.SetBool ("IsAiming", player.PlayerState.WeaponState == PlayerState.EWeaponState.AIMING ||
+									player.PlayerState.WeaponState == PlayerState.EWeaponState.AIMEDFIRING);
 
-		animator.SetBool ("IsInCover", GameManager.Instance.LocalPlayer.PlayerState.MoveState == PlayerState.EMoveState.COVER);
-		animator.SetBool ("IsReloading", player.PlayerShoot.ActiveWeapon.Reloader.IsReloading);
+		animator.SetBool ("IsInCover", player.PlayerState.MoveState == PlayerState.EMoveState.COVER);
+
+
+		animator.SetBool ("IsReloading", (player.PlayerShoot.ActiveWeapon.Reloader.IsReloading &&
+			player.PlayerShoot.ActiveWeapon.WeaponType == EWeaponType.ASSAULTRIFLE));
+
 
 	}
 
+
+	public void SetTriggerStartReloadCartridge(){
+		animator.SetTrigger ("StartReloadCartridge");
+	}
+
+
+	public void SetTriggerStopReloadCartridge(){
+		animator.SetTrigger ("StopReloadCartridge");
+	}
 
 
 }

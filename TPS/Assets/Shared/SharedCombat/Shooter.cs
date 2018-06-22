@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour {
 
+	public EWeaponType WeaponType;
 
 	[SerializeField] float rateOfFire;
 	[SerializeField] Projectile projectile;
@@ -31,7 +32,7 @@ public class Shooter : MonoBehaviour {
 	public Vector3 AimTargetOffset;
 	[HideInInspector] public bool canFire;
 	[HideInInspector] public WeaponReloader Reloader;
-
+	ReloaderByCartridge cartridgeReloader;
 
 	void Awake () {
 
@@ -42,7 +43,9 @@ public class Shooter : MonoBehaviour {
 		audioReload = transform.Find ("Audio/Reload");
 		audioControllerReload = audioReload.GetComponentInChildren <AudioController> ();
 		muzzlePartSystem = muzzle.GetComponent <ParticleSystem> ();
-	
+		if(Reloader is ReloaderByCartridge) {
+			cartridgeReloader = (ReloaderByCartridge)Reloader;
+		}
 	}
 	
 
@@ -52,13 +55,19 @@ public class Shooter : MonoBehaviour {
 			return;
 
 		if (Reloader != null) {
-			if (Reloader.IsReloading)
+
+			if(Reloader.isReloading && WeaponType == EWeaponType.SHOTGUN){
+				cartridgeReloader.EndReload ();
 				return;
+			}
+
+			if (Reloader.IsReloading) {
+				return;
+			}
 			if (Reloader.RoundsRemainingInClip == 0) {
 				Reload ();
 				return;
 			}
-
 			ExecuteFire ();
 		}
 

@@ -19,8 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4834241538014496}
-  - component: {fileID: 114510354207033064}
-  - component: {fileID: 114195870534056928}
+  - component: {fileID: 114009241224599802}
+  - component: {fileID: 114779033179941374}
   m_Layer: 0
   m_Name: Shotgun
   m_TagString: Untagged
@@ -1058,7 +1058,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4524705646707104}
   - component: {fileID: 114595157527389622}
-  - component: {fileID: 114953211824703286}
+  - component: {fileID: 114460633366248726}
   m_Layer: 0
   m_Name: AssaultRifle
   m_TagString: Untagged
@@ -4035,6 +4035,26 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114009241224599802
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1013396074750464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adf995e79750b1643a990ca91fc0a6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponType: 1
+  rateOfFire: 0.3
+  projectile: {fileID: 114137518413398368, guid: 249a719d0952cdf44b4fc3e22de85722,
+    type: 2}
+  hand: {fileID: 4994744952653972}
+  AimTarget: {fileID: 0}
+  AimTargetOffset: {x: 0, y: 0, z: 0}
+  canFire: 0
+  Reloader: {fileID: 0}
 --- !u!114 &114056326490296702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4062,24 +4082,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySettings: {fileID: 11400000, guid: 8c580cae37b354e41aa57fbf18868abe, type: 2}
   playerScanner: {fileID: 114229054355869048}
---- !u!114 &114195870534056928
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1013396074750464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e5f93ca80716b4d80c78c779ec251f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxAmmo: 64
-  reloadTimeDefault: 5
-  fastReloadTime: 5
-  clipSize: 8
-  inventory: {fileID: 114836799643655512}
-  weaponType: 1
-  shotsFiredInClip: 0
 --- !u!114 &114208266404100030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4091,7 +4093,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49087256ce5cd0c4890785bc54cbdf32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 95661019145441466}
 --- !u!114 &114210341082060368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4173,25 +4174,25 @@ MonoBehaviour:
   waypointController: {fileID: 0}
   waitTimeMin: 1
   waitTimeMax: 3
---- !u!114 &114510354207033064
+--- !u!114 &114460633366248726
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1013396074750464}
+  m_GameObject: {fileID: 1626455971078772}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9677385190c17d74299dc66db08e50d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 217d172519d13bd4f9f9c9daea82ed48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rateOfFire: 0.3
-  projectile: {fileID: 114137518413398368, guid: 249a719d0952cdf44b4fc3e22de85722,
-    type: 2}
-  hand: {fileID: 4994744952653972}
-  AimTarget: {fileID: 0}
-  AimTargetOffset: {x: 0, y: 0, z: 0}
-  canFire: 0
-  Reloader: {fileID: 0}
+  maxAmmo: 120
+  reloadTimeDefault: 3
+  fastReloadTime: 2
+  clipSize: 20
+  inventory: {fileID: 114836799643655512}
+  weaponType: 0
+  shotsFiredInClip: 0
+  isReloading: 0
 --- !u!114 &114516197222153006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4215,6 +4216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9677385190c17d74299dc66db08e50d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WeaponType: 0
   rateOfFire: 0.1
   projectile: {fileID: 114137518413398368, guid: 249a719d0952cdf44b4fc3e22de85722,
     type: 2}
@@ -4223,6 +4225,25 @@ MonoBehaviour:
   AimTargetOffset: {x: 0, y: 0, z: 0}
   canFire: 0
   Reloader: {fileID: 0}
+--- !u!114 &114779033179941374
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1013396074750464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff430d77fb69d0c4fa92d142645103d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxAmmo: 64
+  reloadTimeDefault: 5
+  fastReloadTime: 5
+  clipSize: 8
+  inventory: {fileID: 114836799643655512}
+  weaponType: 1
+  shotsFiredInClip: 0
+  isReloading: 0
 --- !u!114 &114836799643655512
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4235,24 +4256,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
---- !u!114 &114953211824703286
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1626455971078772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e5f93ca80716b4d80c78c779ec251f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxAmmo: 120
-  reloadTimeDefault: 3
-  fastReloadTime: 2
-  clipSize: 20
-  inventory: {fileID: 114836799643655512}
-  weaponType: 0
-  shotsFiredInClip: 0
 --- !u!114 &114954636955952738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4660,7 +4663,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.09633781, y: -0.03273298, z: 0.00000021713535}
+  m_ConnectedAnchor: {x: 0.09633829, y: -0.03273298, z: 0.00000021713534}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -4748,7 +4751,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.09633778, y: -0.03273301, z: 0.00000022198324}
+  m_ConnectedAnchor: {x: -0.09633826, y: -0.03273301, z: 0.00000022198326}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -4792,7 +4795,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.1846329, y: 0.389676, z: -0.070446834}
+  m_ConnectedAnchor: {x: 0.18463337, y: 0.389676, z: -0.070446834}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -4968,7 +4971,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00006504043, y: -0.41761896, z: -0.005742452}
+  m_ConnectedAnchor: {x: 0.000064563596, y: -0.41761896, z: -0.005742452}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:

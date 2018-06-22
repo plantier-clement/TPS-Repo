@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 4820632647507214}
   - component: {fileID: 198517449463898456}
   - component: {fileID: 199434500207026640}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,9 +84,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4198527528861190}
   - component: {fileID: 114940635874498870}
-  - component: {fileID: 114748534205468952}
+  - component: {fileID: 114016622306207286}
   - component: {fileID: 114645872167731524}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: AssaultRifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,10 +149,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4852346143298894}
-  - component: {fileID: 114053514642050750}
-  - component: {fileID: 114766683860914820}
+  - component: {fileID: 114409614893293278}
+  - component: {fileID: 114159457161475458}
   - component: {fileID: 114193052069848262}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 4674214778379076}
   - component: {fileID: 82301921833909188}
   - component: {fileID: 114327557925235932}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Reload
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4913073771072870}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Weapons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,7 +276,7 @@ GameObject:
   - component: {fileID: 4414481886023608}
   - component: {fileID: 82845592792029300}
   - component: {fileID: 114638364601237886}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Reload
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -445,7 +445,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4003550507342672}
   - component: {fileID: 114914371540236032}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Crosshair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,7 +492,7 @@ GameObject:
   - component: {fileID: 4562883755004358}
   - component: {fileID: 33320160997157462}
   - component: {fileID: 23584185008170454}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: garde
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -553,7 +553,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4268311691522956}
   - component: {fileID: 114913111970100038}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Inventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -663,7 +663,7 @@ GameObject:
   - component: {fileID: 4383448741078190}
   - component: {fileID: 33346089428831794}
   - component: {fileID: 23778675997802744}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: culasse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -787,7 +787,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4387810167542396}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -849,7 +849,7 @@ GameObject:
   - component: {fileID: 4953688302663050}
   - component: {fileID: 82573807410217262}
   - component: {fileID: 114160307412721898}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -881,7 +881,7 @@ GameObject:
   - component: {fileID: 4229972417425456}
   - component: {fileID: 33537630159355028}
   - component: {fileID: 23717922103371972}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: load
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -911,7 +911,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4974686244138632}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -943,7 +943,7 @@ GameObject:
   - component: {fileID: 4033192623245164}
   - component: {fileID: 33180945795353296}
   - component: {fileID: 23747752258470528}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: AssaultRifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -975,7 +975,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4486611807716090}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -992,7 +992,7 @@ GameObject:
   - component: {fileID: 4391782641496780}
   - component: {fileID: 33342247116049902}
   - component: {fileID: 23296296814683106}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: automatic_shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1025,7 +1025,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4851183835615814}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Automatic_Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1087,7 +1087,7 @@ GameObject:
   - component: {fileID: 4575915660386362}
   - component: {fileID: 82585065925326516}
   - component: {fileID: 114218141380833562}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1104,7 +1104,7 @@ GameObject:
   - component: {fileID: 4153446479918194}
   - component: {fileID: 33302084829164270}
   - component: {fileID: 23472214746401766}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: balle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1120,7 +1120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4606863225753280}
   - component: {fileID: 114389696105481908}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: AimingPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1152,7 +1152,7 @@ GameObject:
   - component: {fileID: 4934994001803714}
   - component: {fileID: 33285417750325034}
   - component: {fileID: 23051200062308684}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: plaquette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1200,7 +1200,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4014304996517154}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1323,7 +1323,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4720382960389214}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1356,7 +1356,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4540617171217404}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1403,7 +1403,7 @@ GameObject:
   - component: {fileID: 4011116060603896}
   - component: {fileID: 82680495468400762}
   - component: {fileID: 114788970455941252}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Footsteps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1418,7 +1418,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4401315547514114}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1627,7 +1627,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4883892905897644}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4006,25 +4006,25 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114053514642050750
+--- !u!114 &114016622306207286
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1102894870602266}
+  m_GameObject: {fileID: 1060731933967604}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9677385190c17d74299dc66db08e50d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 217d172519d13bd4f9f9c9daea82ed48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rateOfFire: 0.3
-  projectile: {fileID: 114137518413398368, guid: 249a719d0952cdf44b4fc3e22de85722,
-    type: 2}
-  hand: {fileID: 4448656940352784}
-  AimTarget: {fileID: 0}
-  AimTargetOffset: {x: 0, y: 0, z: 0}
-  canFire: 0
-  Reloader: {fileID: 0}
+  maxAmmo: 120
+  reloadTimeDefault: 3
+  fastReloadTime: 2
+  clipSize: 20
+  inventory: {fileID: 114913111970100038}
+  weaponType: 0
+  shotsFiredInClip: 0
+  isReloading: 0
 --- !u!114 &114088730149299134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4038,6 +4038,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveState: 0
   WeaponState: 0
+--- !u!114 &114159457161475458
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1102894870602266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff430d77fb69d0c4fa92d142645103d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxAmmo: 64
+  reloadTimeDefault: 5
+  fastReloadTime: 5
+  clipSize: 8
+  inventory: {fileID: 114913111970100038}
+  weaponType: 1
+  shotsFiredInClip: 0
+  isReloading: 0
 --- !u!114 &114160307412721898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4080,8 +4099,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b1e4123290738448254c10930bcf46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 100
-  spawnPoints: []
+  hitPoints: 1
+  spawnPoints:
+  - {fileID: 0}
   respawnTime: 3
   ragdoll: {fileID: 114332973117181882}
 --- !u!114 &114218141380833562
@@ -4151,6 +4171,26 @@ MonoBehaviour:
   coverMask:
     serializedVersion: 2
     m_Bits: 512
+--- !u!114 &114409614893293278
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1102894870602266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adf995e79750b1643a990ca91fc0a6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponType: 1
+  rateOfFire: 0.3
+  projectile: {fileID: 114137518413398368, guid: 249a719d0952cdf44b4fc3e22de85722,
+    type: 2}
+  hand: {fileID: 4448656940352784}
+  AimTarget: {fileID: 0}
+  AimTargetOffset: {x: 0, y: 0, z: 0}
+  canFire: 0
+  Reloader: {fileID: 0}
 --- !u!114 &114535948764160554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4243,42 +4283,6 @@ MonoBehaviour:
   speedToMinSpread: 0.2
   maxSpread: 20
   recoilCamOffset: 0.25
---- !u!114 &114748534205468952
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1060731933967604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e5f93ca80716b4d80c78c779ec251f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxAmmo: 120
-  reloadTimeDefault: 3
-  fastReloadTime: 2
-  clipSize: 20
-  inventory: {fileID: 114913111970100038}
-  weaponType: 0
-  shotsFiredInClip: 0
---- !u!114 &114766683860914820
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1102894870602266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e5f93ca80716b4d80c78c779ec251f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxAmmo: 64
-  reloadTimeDefault: 5
-  fastReloadTime: 5
-  clipSize: 8
-  inventory: {fileID: 114913111970100038}
-  weaponType: 1
-  shotsFiredInClip: 0
 --- !u!114 &114786075729288098
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4349,6 +4353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9677385190c17d74299dc66db08e50d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WeaponType: 0
   rateOfFire: 0.1
   projectile: {fileID: 114137518413398368, guid: 249a719d0952cdf44b4fc3e22de85722,
     type: 2}
@@ -4653,7 +4658,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.09633829, y: -0.03273298, z: 0.00000021713534}
+  m_ConnectedAnchor: {x: 0.09633763, y: -0.03273298, z: 0.00000003832142}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -4697,7 +4702,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.2768702, y: 0.00000007769137, z: 0.00000012107193}
+  m_ConnectedAnchor: {x: 0.27687, y: 0.00000007769137, z: -0.00000023655593}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -4741,7 +4746,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0000001358969, y: 0.5213761, z: -0.040266857}
+  m_ConnectedAnchor: {x: -0.00000004803931, y: 0.5213761, z: -0.040267006}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -4785,7 +4790,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000000108218714, y: 0.09226304, z: 0.015771132}
+  m_ConnectedAnchor: {x: -0.00000009999009, y: 0.09226304, z: 0.015770942}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -4829,7 +4834,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.18463314, y: 0.389676, z: -0.07044589}
+  m_ConnectedAnchor: {x: -0.18463258, y: 0.389676, z: -0.07044604}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -4873,7 +4878,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00006511767, y: -0.41761833, z: -0.005785807}
+  m_ConnectedAnchor: {x: 0.000065080414, y: -0.41761833, z: -0.005786008}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -4917,7 +4922,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000064563596, y: -0.41761896, z: -0.005742452}
+  m_ConnectedAnchor: {x: 0.00006410166, y: -0.41761896, z: -0.005741804}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -4961,7 +4966,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.18463337, y: 0.389676, z: -0.07044588}
+  m_ConnectedAnchor: {x: 0.18463385, y: 0.389676, z: -0.07044624}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -5005,7 +5010,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.09633826, y: -0.03273301, z: 0.00000022198326}
+  m_ConnectedAnchor: {x: -0.09633858, y: -0.03273301, z: -0.00000014309519}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -5049,7 +5054,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.2768699, y: 0.00000003592998, z: 0.00000011175871}
+  m_ConnectedAnchor: {x: -0.27687058, y: 0.000000035930036, z: 0.00000008195639}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:

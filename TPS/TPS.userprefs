@@ -1,12 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Combat\WeaponReloader.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Combat\ReloaderByCartridge.cs">
     <Files>
-      <File FileName="Assets\Script\UI\Crosshair.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\UI\LifeUI.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\UI\ReloadUI.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\UI\UIMain.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\Combat\WeaponReloader.cs" Line="78" Column="1" />
+      <File FileName="Assets\Script\Combat\ReloaderByCartridge.cs" Line="46" Column="34" />
+      <File FileName="Assets\Script\Combat\WeaponReloader.cs" Line="37" Column="11" />
+      <File FileName="Assets\Shared\SharedCombat\Shooter.cs" Line="64" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
