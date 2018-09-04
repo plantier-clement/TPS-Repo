@@ -12,8 +12,6 @@ public class EscapeMenu : MonoBehaviour {
 	[SerializeField] Button NoButton;
 
 
-
-
 	void Awake(){
 		EscapeMenuPanel.SetActive (false);
 		YesButton.onClick.AddListener (OnYesClicked);
@@ -49,7 +47,6 @@ public class EscapeMenu : MonoBehaviour {
 
 
 	void PauseGame(){
-		
 		Time.timeScale = 0;
 		EscapeMenuPanel.SetActive (true);
 		GameManager.Instance.InputController.SetInputMode (InputController.EInputMode.MENU);
